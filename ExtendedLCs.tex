@@ -1,0 +1,288 @@
+% mnras_template.tex
+%
+% LaTeX template for creating an MNRAS paper
+%
+% v3.0 released 14 May 2015
+% (version numbers match those of mnras.cls)
+%
+% Copyright (C) Royal Astronomical Society 2015
+% Authors:
+% Keith T. Smith (Royal Astronomical Society)
+
+% Change log
+%
+% v3.0 May 2015
+%    Renamed to match the new package name
+%    Version number matches mnras.cls
+%    A few minor tweaks to wording
+% v1.0 September 2013
+%    Beta testing only - never publicly released
+%    First version: a simple (ish) template for creating an MNRAS paper
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basic setup. Most papers should leave these options alone.
+\documentclass[a4paper,fleqn,usenatbib]{mnras}
+
+% MNRAS is set in Times font. If you don't have this installed (most LaTeX
+% installations will be fine) or prefer the old Computer Modern fonts, comment
+% out the following line
+\usepackage{newtxtext,newtxmath}
+% Depending on your LaTeX fonts installation, you might get better results with one of these:
+%\usepackage{mathptmx}
+%\usepackage{txfonts}
+
+% Use vector fonts, so it zooms properly in on-screen viewing software
+% Don't change these lines unless you know what you are doing
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+
+
+%%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
+
+% Only include extra packages if you really need them. Common packages are:
+\usepackage{graphicx}	% Including figure files
+\usepackage{amsmath}	% Advanced maths commands
+\usepackage{amssymb}	% Extra maths symbols
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
+
+% Please keep new commands to a minimum, and use \newcommand not \def to avoid
+% overwriting existing commands. Example:
+%\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-squared
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%
+
+% Title of the paper, and the short title which is used in the headers.
+% Keep the title short and informative.
+\title{Hi}
+
+% The list of authors, and the short list which is used in the headers.
+% If you need two or more lines of authors, add an extra line using \newauthor
+\author{
+	Jackeline Moreno,$^{1}$\thanks{E-mail: jm3663@drexel.edu}
+	Jack O'Brien,$^{1}$
+	Michael S. Vogeley$^{1}$
+	Gordan T. Richards$^{1}$
+	and	Vishal Kasliwal$^{2,3}$
+	\\
+	% List of institutions
+	$^{1}$Drexel University, 3141 Chestnut Ave, Philadelphia, Pensylvania 19104, USA\\
+	$^{2}$University of Pensylvania , Street Address, Philadelphia, Pensylvania 19104, USA\\
+	$^{3}$Princeton, Different Institution, Street Address, Princeton, New Jersey, USA
+}
+
+% These dates will be filled out by the publisher
+\date{Accepted XXX. Received YYY; in original form ZZZ}
+
+% Enter the current year, for the copyright statements etc.
+
+
+% Don't change these lines
+\begin{document}
+
+\maketitle
+
+ Kepler magnitudes for stellar sources are estimated to be equivalent to the combination of SDSS r and g  bandpasses.   The relation in equation (1) is empirically calculated by Smith et al. ApJ  2002).  
+ 
+ \begin{equation}
+ K_{p} = 0.8mag_{r}+0.2mag_{g}
+ \end{equation}
+ However, we do not work in magnitudes, we use reprocessed k2 lightcurves provided as a photocurrent.   
+ \begin{equation}
+ f_{kep} = 10^{-0.4(K_{p}-12)}*f_{12}
+ \end{equation}
+ where $f_{12} = 1.74 \times10^{5}$measured in electrons per second  [e-/s].
+ 
+ We approximate the relation in equation (1) as 
+ \begin{equation}
+ f_{kep} \sim 0.8 f_{r} +0.2 f_{g}.
+ \end{equation}
+ 
+ 
+ 
+ \begin{equation}
+ f_{SDSS}= \sinh{ \frac{log(10.0)}{-2.5*mag-log(b_{band})}}*2*b_{band}*f_{0}
+ \end{equation}
+ 
+ \begin{equation}
+ error = err*\frac{\log{10}}{2.5*2*b_{band}} \sqrt{1+\frac{f}{(2*b_{band}*f_{0})^{2}*f_{0}}}
+ \end{equation}
+
+ \begin{figure}
+ 	% To include a figure from a file named example.*
+ 	% Allowable file formats are eps or ps if compiling using latex
+ 	% or pdf, png, jpg if compiling using pdflatex
+ 	\includegraphics[width=\columnwidth]{220173631ExtendedLC.png}
+ 	\includegraphics[width=\columnwidth]{220224214ExtendedLC.png}
+ 	\includegraphics[width=\columnwidth]{220224988ExtendedLC.png}
+ 	\caption{}
+ 	\label{fig:example_figure}
+ \end{figure}
+ 
+ 
+ 
+  \begin{figure}
+  	% To include a figure from a file named example.*
+  	% Allowable file formats are eps or ps if compiling using latex
+  	% or pdf, png, jpg if compiling using pdflatex
+ 	\includegraphics[width=\columnwidth]{220212788ExtendedLC.png}
+ 	\includegraphics[width=\columnwidth]{220205720ExtendedLC.png}
+ 	\includegraphics[width=\columnwidth]{220210247ExtendedLC.png}
+  	\caption{}
+  	\label{fig:example_figure}
+  \end{figure}
+  
+  
+   \begin{figure}
+   	% To include a figure from a file named example.*
+   	% Allowable file formats are eps or ps if compiling using latex
+   	% or pdf, png, jpg if compiling using pdflatex
+ 	\includegraphics[width=\columnwidth]{220212670ExtendedLC.png}
+ 	\includegraphics[width=\columnwidth]{220211159ExtendedLC.png}
+ 	\includegraphics[width=\columnwidth]{220212877ExtendedLC.png}
+   	\caption{}
+   	\label{fig:example_figure}
+   \end{figure}
+ 
+    \begin{figure}
+    	% To include a figure from a file named example.*
+    	% Allowable file formats are eps or ps if compiling using latex
+    	% or pdf, png, jpg if compiling using pdflatex
+ 	\includegraphics[width=\columnwidth]{220230533ExtendedLC.png}
+     	\includegraphics[width=\columnwidth]{220171966ExtendedLC.png}
+     	 	\includegraphics[width=\columnwidth]{220235246ExtendedLC.png}
+    	\caption{}
+    	\label{fig:example_figure}
+    \end{figure}
+    
+       \begin{figure}
+       	% To include a figure from a file named example.*
+       	% Allowable file formats are eps or ps if compiling using latex
+       	% or pdf, png, jpg if compiling using pdflatex
+ 	\includegraphics[width=\columnwidth]{220184207ExtendedLC.png}
+ 	\includegraphics[width=\columnwidth]{220179771ExtendedLC.png}
+ 	\includegraphics[width=\columnwidth]{220180147ExtendedLC.png}
+       	\caption{}
+       	\label{fig:example_figure}
+       \end{figure}
+
+          
+          
+          
+                    \begin{figure}
+                    	% To include a figure from a file named example.*
+                    	% Allowable file formats are eps or ps if compiling using latex
+                    	% or pdf, png, jpg if compiling using pdflatex
+	\includegraphics[width=\columnwidth]{220220757ExtendedLC.png}
+	\includegraphics[width=\columnwidth]{220178559ExtendedLC.png}
+	\includegraphics[width=\columnwidth]{220227863ExtendedLC.png}
+                    	\caption{}
+                    	\label{fig:example_figure}
+                    \end{figure}
+                    
+          \begin{figure}
+          	% To include a figure from a file named example.*
+          	% Allowable file formats are eps or ps if compiling using latex
+          	% or pdf, png, jpg if compiling using pdflatex
+ 	\includegraphics[width=\columnwidth]{220176624ExtendedLC.png}
+ 	\includegraphics[width=\columnwidth]{220191502ExtendedLC.png}
+ 	\includegraphics[width=\columnwidth]{220185866ExtendedLC.png}
+          	\caption{}
+          	\label{fig:example_figure}
+          \end{figure}
+
+          \begin{figure}
+          	% To include a figure from a file named example.*
+          	% Allowable file formats are eps or ps if compiling using latex
+          	% or pdf, png, jpg if compiling using pdflatex
+  	\includegraphics[width=\columnwidth]{220211954ExtendedLC.png}
+  	\includegraphics[width=\columnwidth]{220191716ExtendedLC.png}
+  	\includegraphics[width=\columnwidth]{220185768ExtendedLC.png}
+          	\caption{}
+          	\label{fig:example_figure}
+          \end{figure}          
+          
+          
+       \begin{figure}
+       	% To include a figure from a file named example.*
+       	% Allowable file formats are eps or ps if compiling using latex
+       	% or pdf, png, jpg if compiling using pdflatex
+ 	\includegraphics[width=\columnwidth]{220184071ExtendedLC.png}
+ 	\includegraphics[width=\columnwidth]{220173771ExtendedLC.png}
+ 	\includegraphics[width=\columnwidth]{220176915ExtendedLC.png}
+       	\caption{}
+       	\label{fig:example_figure}
+       \end{figure}                
+          
+          
+       \begin{figure}
+       	% To include a figure from a file named example.*
+       	% Allowable file formats are eps or ps if compiling using latex
+       	% or pdf, png, jpg if compiling using pdflatex
+ 	\includegraphics[width=\columnwidth]{220181935ExtendedLC.png}
+	\includegraphics[width=\columnwidth]{220207878ExtendedLC.png}
+ 	\includegraphics[width=\columnwidth]{220175559ExtendedLC.png}
+       	\caption{}
+       	\label{fig:example_figure}
+       \end{figure}      
+
+        \begin{figure}
+        	% To include a figure from a file named example.*
+        	% Allowable file formats are eps or ps if compiling using latex
+        	% or pdf, png, jpg if compiling using pdflatex
+        	\includegraphics[width=\columnwidth]{220200640ExtendedLC.png}
+        	\includegraphics[width=\columnwidth]{220217645ExtendedLC.png}
+        	\includegraphics[width=\columnwidth]{220169790ExtendedLC.png}
+        	\caption{}
+        	\label{fig:example_figure}
+        \end{figure}      
+        
+        \begin{figure}
+        	% To include a figure from a file named example.*
+        	% Allowable file formats are eps or ps if compiling using latex
+        	% or pdf, png, jpg if compiling using pdflatex
+        	\includegraphics[width=\columnwidth]{220170097ExtendedLC.png}
+        	\includegraphics[width=\columnwidth]{220221035ExtendedLC.png}
+        	\includegraphics[width=\columnwidth]{220192831ExtendedLC.png}
+        	\caption{}
+        	\label{fig:example_figure}
+        \end{figure}      
+        
+        
+        \begin{figure}
+        	% To include a figure from a file named example.*
+        	% Allowable file formats are eps or ps if compiling using latex
+        	% or pdf, png, jpg if compiling using pdflatex
+        %	\includegraphics[width=\columnwidth]{220220452ExtendedLC.png}
+        		\includegraphics[width=\columnwidth]{220198775ExtendedLC.png}
+        	%	\includegraphics[width=\columnwidth]{220209831ExtendedLC.png}
+        		\caption{}
+        		\label{fig:example_figure}
+        	\end{figure}   
+        	
+        	\begin{figure}
+        		% To include a figure from a file named example.*
+        		% Allowable file formats are eps or ps if compiling using latex
+        		% or pdf, png, jpg if compiling using pdflatex
+        		\includegraphics[width=\columnwidth]{220235253ExtendedLC.png}
+        		\includegraphics[width=\columnwidth]{220192000ExtendedLC.png}
+        	%	\includegraphics[width=\columnwidth]{220186429ExtendedLC.png}
+        		\caption{}
+        		\label{fig:example_figure}
+        	\end{figure}   
+        	
+        	\begin{figure}
+        		% To include a figure from a file named example.*
+        		% Allowable file formats are eps or ps if compiling using latex
+        		% or pdf, png, jpg if compiling using pdflatex
+        		\includegraphics[width=\columnwidth]{220216359ExtendedLC.png}
+        		\caption{}
+        		\label{fig:example_figure}
+        	\end{figure}   
+        	
+         
+\end{document}
